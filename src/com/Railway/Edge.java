@@ -2,19 +2,18 @@ package com.Railway;
 
 public class Edge {
 
-    //private variables
     private final int fromNodeIndex;
     private final int toNodeIndex;
-    private final int length;
+    private final double time;
+    private final double price;
 
-    //constructor
-    public Edge(int fromNodeIndex, int toNodeIndex, int length) {
+    public Edge(int fromNodeIndex, int toNodeIndex, double time, double price) {
         this.fromNodeIndex = fromNodeIndex;
         this.toNodeIndex = toNodeIndex;
-        this.length = length;
+        this.time = time;
+        this.price = price;
     }
 
-    //getters
     public int getFromNodeIndex() {
         return fromNodeIndex;
     }
@@ -23,11 +22,20 @@ public class Edge {
         return toNodeIndex;
     }
 
-    public int getLength() {
-        return length;
+    public double getTime() {
+        return time;
     }
 
-    //determining the neighbouring node
+    public double getPrice() {
+        return price;
+    }
+
+    /**
+     * Determining the neighbouring node
+     *
+     * @param nodeIndex
+     * @return
+     */
     public int getNeighbourIndex(int nodeIndex) {
         if (fromNodeIndex == nodeIndex) {
             return toNodeIndex;
