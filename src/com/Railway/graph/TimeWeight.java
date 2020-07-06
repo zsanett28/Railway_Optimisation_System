@@ -1,9 +1,9 @@
 package com.Railway.graph;
 
-public class DurationWeight implements Weight {
+public class TimeWeight implements Weight {
 
     @Override
     public double getWeight(Edge edge) {
-        return 0;
+        return edge.getTime();
     }
 }
