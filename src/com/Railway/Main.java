@@ -1,5 +1,8 @@
 package com.Railway;
 
+import com.Railway.graph.Edge;
+import com.Railway.graph.Graph;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;

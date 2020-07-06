@@ -1,6 +1,6 @@
-package com.Railway;
+package com.Railway.graph;
 
-public class DurationWeight implements Weight{
+public class PriceWeight implements Weight {
 
     @Override
     public double getWeight(Edge edge) {

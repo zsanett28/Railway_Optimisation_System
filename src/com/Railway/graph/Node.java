@@ -1,4 +1,4 @@
-package com.Railway;
+package com.Railway.graph;
 
 import java.util.ArrayList;
 
