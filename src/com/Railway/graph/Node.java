@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class Node {
 
-    //private variables
-    private int distanceFromSource = Integer.MAX_VALUE;
+    private double distanceFromSource;
     private boolean visited;
     private ArrayList<Edge> edges = new ArrayList<>();
     private String cityname;
@@ -15,13 +14,11 @@ public class Node {
         this.cityname = cityname;
     }
 
-    //getters
-    public int getDistanceFromSource() {
+    public double getDistanceFromSource() {
         return distanceFromSource;
     }
 
-    //setters
-    public void setDistanceFromSource(int distanceFromSource) {
+    public void setDistanceFromSource(double distanceFromSource) {
         this.distanceFromSource = distanceFromSource;
     }
 
