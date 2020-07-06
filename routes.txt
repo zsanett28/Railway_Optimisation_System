@@ -1,0 +1,12 @@
+Kolozsvar Marosvasarhely 111
+Kolozsvar Zilah 84
+Marosvasarhely Csikszereda 139
+Marosvasarhely Temesvar 334
+Csikszereda Temesvar 460
+Temesvar Nagyvarad 170
+Temesvar Zilah 284
+Nagyvarad Zilah 115
+Bukarest Kolozsvar 444
+Bukarest Marosvasarhely 353
+Bukarest Csikszereda 281
+Bukarest Nagyvarad 590
