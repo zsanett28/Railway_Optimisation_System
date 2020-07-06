@@ -29,12 +29,13 @@ public class Graph {
     }
 
     //Dijkstra algorithm
-    public void dijkstra(int fromNode, int toNode) {
-        /*for (Node node : nodes) {
-            node.setDistanceFromSource(Integer.MAX_VALUE);
+    public void dijkstra(int fromNode, Weight weight) {
+        //initialization of the nodes
+        for (Node node : nodes) {
+            node.setDistanceFromSource(Double.MAX_VALUE);
             node.setParent(null);
             node.setVisited(false);
-        }*/
+        }
         nodes[fromNode].setDistanceFromSource(0);
         int nextNode = fromNode;
 
@@ -44,7 +45,7 @@ public class Graph {
                 int neighbourIndex = currentNodeEdge.getNeighbourIndex(nextNode);
 
                 if (!nodes[neighbourIndex].isVisited()) {
-                    int tentative = nodes[nextNode].getDistanceFromSource() + currentNodeEdge.getLength();
+                    double tentative = nodes[nextNode].getDistanceFromSource() + weight.getWeight(currentNodeEdge);
                     if (tentative < nodes[neighbourIndex].getDistanceFromSource()) {
                         nodes[neighbourIndex].setDistanceFromSource(tentative);
                         nodes[neighbourIndex].setParent(nodes[nextNode]);
@@ -59,9 +60,9 @@ public class Graph {
 
     private int getNodeShortestDistanced(int j) {
         int storedNodeIndex = 0;
-        int storedDist = Integer.MAX_VALUE;
+        double storedDist = Double.MAX_VALUE;
         for (int i = 0; i < nodes.length; i++) {
-            int currentDist = nodes[i].getDistanceFromSource();
+            double currentDist = nodes[i].getDistanceFromSource();
             if (!nodes[i].isVisited() && currentDist < storedDist) {
                 storedDist = currentDist;
                 storedNodeIndex = i;
