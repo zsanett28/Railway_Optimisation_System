@@ -2,6 +2,8 @@ package com.Railway;
 
 import com.Railway.graph.Edge;
 import com.Railway.graph.Graph;
+import com.Railway.graph.PriceWeight;
+import com.Railway.graph.TimeWeight;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -12,50 +14,59 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        ArrayList<String> names = new ArrayList<>();
-        ArrayList<Edge> routes = new ArrayList<>();
-        Map<String, Integer> hm = new HashMap<>();
-        Scanner s1, s2;
-        try {
-            s1 = new Scanner(new FileReader("cities.txt"));
-            int i = 0;
-            String cityname;
+    private static ArrayList<String> names = new ArrayList<>();
+    private static ArrayList<Edge> routes = new ArrayList<>();
+    private static Map<String, Integer> hm = new HashMap<>();
 
-            while (s1.hasNext()) {
-                cityname = s1.nextLine();
+    public static void main(String[] args) {
+
+        readCitiesFromFile("cities.txt");
+        readRoutesFromFile("routes.txt");
+
+        Graph g = new Graph(routes, names);
+
+        g.dijkstra(1, new TimeWeight());
+        g.printResult(1, 4);
+        g.dijkstra(1, new PriceWeight());
+        g.printResult(1, 4);
+    }
+
+    private static void readCitiesFromFile(String path) {
+        int i = 0;
+        String cityname;
+        Scanner sc;
+
+        try {
+            sc = new Scanner(new FileReader(path));
+            while (sc.hasNext()) {
+                cityname = sc.nextLine();
                 names.add(cityname);
                 hm.put(cityname, i);
                 i++;
             }
+            sc.close();
+        } catch (FileNotFoundException e){
+            System.out.println("Can't find file!");
+            System.exit(1);
+        }
+    }
 
-            s1.close();
-
-            s2 = new Scanner(new FileReader("routes.txt"));
-            while (s2.hasNext()) {
-
-                String fromCity = s2.next();
-                String toCity = s2.next();
-                int length = s2.nextInt();
-
-                routes.add(new Edge(hm.get(fromCity), hm.get(toCity), length));
+    private static void readRoutesFromFile(String path){
+        Scanner sc;
+        try {
+            sc = new Scanner(new FileReader(path));
+            while (sc.hasNext()) {
+                String fromCity = sc.next();
+                String toCity = sc.next();
+                double time = sc.nextDouble();
+                double price = sc.nextDouble();
+                sc.nextLine();
+                routes.add(new Edge(hm.get(fromCity), hm.get(toCity), time, price));
             }
-
-            s2.close();
-
+            sc.close();
         } catch (FileNotFoundException e) {
             System.out.println("Can't find file!");
             System.exit(1);
         }
-
-        Graph g = new Graph(routes, names);
-
-        /*for (int i = 0; i < names.size(); i++) {
-            g.dijkstra(i);
-            g.printResult(i);
-        }*/
-
-        g.dijkstra(1,4);
-        g.printResult(1,4);
     }
 }
