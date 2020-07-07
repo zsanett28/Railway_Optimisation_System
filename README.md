@@ -1,7 +1,5 @@
-# Dijsktra algorithm
+# Railway Optimisation System
 
 
-Hello There!
-
-Hi!
+With this JAVA Swing application the user can find the shortest and the cheapest route train in Romania.
 
