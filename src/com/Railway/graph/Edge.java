@@ -30,12 +30,6 @@ public class Edge {
         return price;
     }
 
-    /**
-     * Determining the neighbouring node
-     *
-     * @param nodeIndex
-     * @return
-     */
     public int getNeighbourIndex(int nodeIndex) {
         if (fromNodeIndex == nodeIndex) {
             return toNodeIndex;
