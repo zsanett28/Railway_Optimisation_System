@@ -1,0 +1,28 @@
+Cluj-Napoca Târgu-Mure? 16:35 IR
+Cluj-Napoca Miercurea-Ciuc 02:15 16:23 IR
+Cluj-Napoca Oradea 02:28 04:39 05:50 06:31 07:35 13:33 14:46 15:39 30:40 IR 02:50 07:45 16:43 18:10 R
+Cluj-Napoca Bra?ov 02:15 10:14 13:40 16:23 19:24 22:14 IR
+Cluj-Napoca Sibiu 16:13 IR
+Cluj-Napoca Suceava 01:01 09:30 12:48 22:24 IR
+Cluj-Napoca Alba-Iulia 00:56 03:41 07:25 IR 05:15 19:41 R
+Târgu-Mure? Miercurea-Ciuc 13:33 IR
+Târgu-Mure? Timi?oara 16:22 IR
+Târgu-Mure? Sibiu 03:12 R
+Târgu-Mure? Alba-Iulia 03:12 R 16:22 IR
+Miercurea-Ciuc Bra?ov 01:50 03:41 08:09 22:15 23:45 IR 04:52 07:33 14:35 16:45 19:44 R
+Timi?oara Oradea 06:38 15:55 17:12 IR 05:11 13:04 17:41 R
+Timi?oara Craiova 05:20 14:00 17:49 IR
+Timi?oara Sibiu 16:00 IR
+Timi?oara Alba-Iulia 06:15 13:35 17:20 IR
+Craiova Bucure?ti 03:00 04:20 04:58 07:15 11:35 12:25 14:10 16:38 17:10 20:20 IR 
+Craiova Sibiu 08:05 15:05 IR 05:05 R
+Craiova Târgu-Jiu 03:03 04:10 08:00 12:26 18:05 19:50 IR 03:10 04:30 05:45 06:05 08:05 14:30 16:20 17:30 20:20 R
+Bucure?ti Ia?i 05:55 11:55 16:05 19:15 22:50 IR
+Bucure?ti Constan?a 03:30 06:31 07:10 08:15 09:30 10:45 14:00 15:20 16:00 17:00 20:10 IR
+Bucure?ti Bra?ov 06:05 07:00 08:05 09:55 12:15 12:55 14:00 15:10 16:38 17:45 18:00 18:45 21:05 IR 06:22 14:15 16:46 20:16 R
+Bucure?ti Suceava 06:15 10:50 13:45 17:00 21:35 23:20 IR
+Ia?i Suceava 06:06 11:00 15:25 18:30 IR 05:06 06:57 11:05 R
+Bra?ov Sibiu 05:25 12:57 19:33 20:25 IR 06:00 14:35 17:47 R
+Bra?ov Alba-Iulia 16:31 IR
+Sibiu Alba-Iulia 07:33 15:44 19:33 R
+Târgu-Jiu Alba-Iulia 21:40 IR
