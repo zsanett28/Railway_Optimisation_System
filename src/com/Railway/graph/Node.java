@@ -1,13 +1,14 @@
 package com.Railway.graph;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Node {
 
-    private double distanceFromSource;
+    private double distance;
     private boolean visited;
-    private ArrayList<Edge> edges = new ArrayList<>();
+    private final ArrayList<Edge> edges = new ArrayList<>();
     private final String cityName;
     private Node parent;
 
@@ -15,12 +16,12 @@ public class Node {
         this.cityName = cityName;
     }
 
-    public double getDistanceFromSource() {
-        return distanceFromSource;
+    public double getDistance() {
+        return distance;
     }
 
-    public void setDistanceFromSource(double distanceFromSource) {
-        this.distanceFromSource = distanceFromSource;
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 
     public boolean isVisited() {
@@ -31,12 +32,12 @@ public class Node {
         this.visited = visited;
     }
 
-    public ArrayList<Edge> getEdges() {
+    public List<Edge> getEdges() {
         return edges;
     }
 
-    public void setEdges(ArrayList<Edge> edges) {
-        this.edges = edges;
+    public void addEdge(Edge edge){
+        edges.add(edge);
     }
 
     public String getCityName() {
