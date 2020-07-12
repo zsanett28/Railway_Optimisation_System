@@ -21,12 +21,18 @@ public class Main {
 
         readRoutesFromFile("routes.txt", graph);
 
-        graph.dijkstra(1, new TimeWeight());
-        graph.printResult(1, 4);
-        graph.dijkstra(1, new PriceWeight());
-        graph.printResult(1, 4);
+        graph.dijkstra("Cluj-Napoca", new TimeWeight());
+        printResult(graph, "Cluj-Napoca", "Timișoara");
+        graph.dijkstra("Cluj-Napoca", new PriceWeight());
+        printResult(graph, "Cluj-Napoca", "Timișoara");
 
         startGUI();
+    }
+
+    public static void printResult(Graph graph, String fromCity, String toCity) {
+        System.out.println("The shortest distance from " + fromCity + " to " + toCity + " is " + graph.getDistanceFromSource(toCity));
+        System.out.println("The route: " + graph.getPath(toCity).toString().replace(",", " ->").replace("[", "").replace("]", ""));
+        System.out.println();
     }
 
     private static void startGUI() {
