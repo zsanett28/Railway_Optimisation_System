@@ -1,31 +1,25 @@
 package com.Railway.graph;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Graph {
 
     //private variables
-    private final Node[] nodes;
-    private final Edge[] edges;
-    private final int noOfNodes;
-    private final int noOfEdges;
+    private final List<Node> nodes = new ArrayList<>();
+    private final List<Edge> edges = new ArrayList<>();
+    private final Map<String, Node> stringToNode = new HashMap<>();
 
     //constructor
-    public Graph(List<Edge> routes, List<String> names) {
-        this.edges = routes.toArray(new Edge[0]);
-        //this.noOfNodes = calculateNoOfNodes(edges);
-        this.noOfNodes = names.size();
-        this.nodes = new Node[this.noOfNodes];
-        for (int n = 0; n < this.noOfNodes; n++) {
-            this.nodes[n] = new Node(names.get(n));
+    public Graph(List<String> names) {
+        for (String name : names) {
+            Node node = new Node(name);
+            nodes.add(node);
+            stringToNode.put(name, node);
         }
-        this.noOfEdges = edges.length;
-        for (int edgeToAdd = 0; edgeToAdd < this.noOfEdges; edgeToAdd++) {
-            this.nodes[edges[edgeToAdd].getFromNodeIndex()].getEdges().add(edges[edgeToAdd]);
-            this.nodes[edges[edgeToAdd].getToNodeIndex()].getEdges().add(edges[edgeToAdd]);
-        }
+    }
+
+    public void addEdge(String fromCity, String toCity, double time, double price) {
+        edges.add(new Edge(stringToNode.get(fromCity), stringToNode.get(toCity), time, price));
     }
 
     //Dijkstra algorithm
