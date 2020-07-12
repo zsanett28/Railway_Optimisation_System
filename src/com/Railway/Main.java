@@ -9,32 +9,27 @@ import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    private static ArrayList<String> names = new ArrayList<>();
-    private static ArrayList<Edge> routes = new ArrayList<>();
-    private static Map<String, Integer> hm = new HashMap<>();
-
     public static void main(String[] args) {
+        List<String> names = readCitiesFromFile("cities.txt");
 
-        readCitiesFromFile("cities.txt");
-        readRoutesFromFile("routes.txt");
+        Graph graph = new Graph(names);
 
-        Graph g = new Graph(routes, names);
+        readRoutesFromFile("routes.txt", graph);
 
-        g.dijkstra(1, new TimeWeight());
-        g.printResult(1, 4);
-        g.dijkstra(1, new PriceWeight());
-        g.printResult(1, 4);
+        graph.dijkstra(1, new TimeWeight());
+        graph.printResult(1, 4);
+        graph.dijkstra(1, new PriceWeight());
+        graph.printResult(1, 4);
 
         startGUI();
     }
 
-    private static void startGUI(){
+    private static void startGUI() {
         JFrame frame = new RailwayGUI("Railway Optimisation System");
         frame.setSize(800, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,8 +37,8 @@ public class Main {
         frame.setVisible(true);
     }
 
-    private static void readCitiesFromFile(String path) {
-        int i = 0;
+    private static List<String> readCitiesFromFile(String path) {
+        List <String> names = new ArrayList<>();
         String cityname;
         Scanner sc;
 
@@ -52,17 +47,16 @@ public class Main {
             while (sc.hasNext()) {
                 cityname = sc.nextLine();
                 names.add(cityname);
-                hm.put(cityname, i);
-                i++;
             }
             sc.close();
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("Can't find file!");
             System.exit(1);
         }
+        return names;
     }
 
-    private static void readRoutesFromFile(String path){
+    private static void readRoutesFromFile(String path, Graph graph) {
         Scanner sc;
         try {
             sc = new Scanner(new FileReader(path));
@@ -72,7 +66,7 @@ public class Main {
                 double time = sc.nextDouble();
                 double price = sc.nextDouble();
                 sc.nextLine();
-                routes.add(new Edge(hm.get(fromCity), hm.get(toCity), time, price));
+                graph.addEdge(fromCity, toCity, time, price);
             }
             sc.close();
         } catch (FileNotFoundException e) {
