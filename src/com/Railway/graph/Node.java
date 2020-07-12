@@ -7,11 +7,11 @@ public class Node {
     private double distanceFromSource;
     private boolean visited;
     private ArrayList<Edge> edges = new ArrayList<>();
-    private String cityname;
+    private String cityName;
     private Node parent;
 
-    public Node(String cityname) {
-        this.cityname = cityname;
+    public Node(String cityName) {
+        this.cityName = cityName;
     }
 
     public double getDistanceFromSource() {
@@ -38,12 +38,12 @@ public class Node {
         this.edges = edges;
     }
 
-    public String getCityname() {
-        return cityname;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCityname(String cityname) {
-        this.cityname = cityname;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
     public Node getParent() {

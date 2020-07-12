@@ -74,7 +74,7 @@ public class Graph {
     public List<String> printPath(Node target) {
         ArrayList<String> path = new ArrayList<>();
         for (Node node = target; node != null; node = node.getParent()) {
-            path.add(node.getCityname());
+            path.add(node.getCityName());
         }
 
         Collections.reverse(path);
@@ -82,7 +82,7 @@ public class Graph {
     }
 
     public void printResult(int fromNode, int toNode) {
-        System.out.println("The shortest distance from " + nodes[fromNode].getCityname() + " to " + nodes[toNode].getCityname() + " is " + nodes[toNode].getDistanceFromSource());
+        System.out.println("The shortest distance from " + nodes[fromNode].getCityName() + " to " + nodes[toNode].getCityName() + " is " + nodes[toNode].getDistanceFromSource());
         System.out.println("The route: " + printPath(nodes[toNode]).toString().replace(","," ->").replace("[","").replace("]",""));
         System.out.println();
     }
