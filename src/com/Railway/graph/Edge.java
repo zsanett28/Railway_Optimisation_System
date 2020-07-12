@@ -2,24 +2,24 @@ package com.Railway.graph;
 
 public class Edge {
 
-    private final int fromNodeIndex;
-    private final int toNodeIndex;
+    private final Node fromNode;
+    private final Node toNode;
     private final double time;
     private final double price;
 
-    public Edge(int fromNodeIndex, int toNodeIndex, double time, double price) {
-        this.fromNodeIndex = fromNodeIndex;
-        this.toNodeIndex = toNodeIndex;
+    public Edge(Node fromNode, Node toNode, double time, double price) {
+        this.fromNode = fromNode;
+        this.toNode = toNode;
         this.time = time;
         this.price = price;
     }
 
-    public int getFromNodeIndex() {
-        return fromNodeIndex;
+    public Node getFromNode() {
+        return fromNode;
     }
 
-    public int getToNodeIndex() {
-        return toNodeIndex;
+    public Node getToNode() {
+        return toNode;
     }
 
     public double getTime() {
@@ -30,11 +30,11 @@ public class Edge {
         return price;
     }
 
-    public int getNeighbourIndex(int nodeIndex) {
-        if (fromNodeIndex == nodeIndex) {
-            return toNodeIndex;
+    public Node getNeighbour(Node node) {
+        if (fromNode == node) {
+            return toNode;
         } else {
-            return fromNodeIndex;
+            return fromNode;
         }
     }
 }
