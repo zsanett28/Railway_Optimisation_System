@@ -2,29 +2,37 @@ package com.Railway;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class RailwayGUI extends JFrame {
     private JPanel mainPanel;
-    private JComboBox toCity;
-    private JComboBox fromCity;
+    private JComboBox<String> toCity;
+    private JComboBox<String>  fromCity;
+    private JPanel routeSelectPanel;
+    private JPanel buttonPanel;
+    private JButton submitButton;
     String[] string = {"Cluj-Napoca","Târgu-Mureș","Miercurea-Ciuc", "Timișoara", "Oradea", "Craiova",
             "București", "Iași", "Constanța", "Brașov", "Sibiu", "Suceava", "Târgu-Jiu", "Alba-Iulia"};
 
-    public RailwayGUI(){
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setContentPane(mainPanel);
+    public RailwayGUI(String title){
+        super(title);
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
-        this.pack();
-        this.setTitle("Railway Optimisation System");
-        fromCity.setModel(new DefaultComboBoxModel<String>(string));
-        toCity.setModel(new DefaultComboBoxModel<String>(string));
+        fromCity.setModel(new DefaultComboBoxModel<>(string));
+        toCity.setModel(new DefaultComboBoxModel<>(string));
+
+        initializeGUI();
+        this.setContentPane(mainPanel);
     }
 
-    public static void main(String[] args) {
+    private void initializeGUI() {
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-        JFrame frame = new RailwayGUI();
-        frame.setSize(800, 600);
-        frame.setVisible(true);
+            }
+        });
     }
 }

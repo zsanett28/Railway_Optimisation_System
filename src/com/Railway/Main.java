@@ -5,6 +5,7 @@ import com.Railway.graph.Graph;
 import com.Railway.graph.PriceWeight;
 import com.Railway.graph.TimeWeight;
 
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -29,6 +30,16 @@ public class Main {
         g.printResult(1, 4);
         g.dijkstra(1, new PriceWeight());
         g.printResult(1, 4);
+
+        startGUI();
+    }
+
+    private static void startGUI(){
+        JFrame frame = new RailwayGUI("Railway Optimisation System");
+        frame.setSize(800, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     private static void readCitiesFromFile(String path) {
