@@ -68,6 +68,7 @@ public class Main {
         Scanner sc;
         try {
             sc = new Scanner(new FileReader(path));
+            sc.useDelimiter(";");
             while (sc.hasNext()) {
                 String fromCity = sc.next();
                 String toCity = sc.next();

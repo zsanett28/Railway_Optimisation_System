@@ -1,6 +1,6 @@
 Cluj-Napoca
-Târgu-Mureș
-Miercurea-Ciuc
+Târgu Mureș
+Miercurea Ciuc
 Timișoara
 Oradea
 Craiova
@@ -10,5 +10,5 @@ Constanța
 Brașov
 Sibiu
 Suceava
-Târgu-Jiu
-Alba-Iulia
+Târgu Jiu
+Alba Iulia
