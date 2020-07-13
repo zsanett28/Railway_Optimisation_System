@@ -14,6 +14,8 @@ public class RailwayGUI extends JFrame {
     private JPanel routeSelectPanel;
     private JPanel buttonPanel;
     private JButton submitButton;
+    private JPanel mapPanel;
+    private JPanel menuPanel;
     String[] string = {"Cluj-Napoca","Târgu-Mureș","Miercurea-Ciuc", "Timișoara", "Oradea", "Craiova",
             "București", "Iași", "Constanța", "Brașov", "Sibiu", "Suceava", "Târgu-Jiu", "Alba-Iulia"};
 
@@ -35,4 +37,6 @@ public class RailwayGUI extends JFrame {
             }
         });
     }
+
+
 }

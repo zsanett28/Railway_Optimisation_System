@@ -38,6 +38,8 @@ public class Main {
     private static void startGUI() {
         JFrame frame = new RailwayGUI("Railway Optimisation System");
         frame.setSize(800, 600);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
