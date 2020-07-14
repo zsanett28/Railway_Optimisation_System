@@ -21,21 +21,27 @@ public class Main {
 
         graph.dijkstra("Cluj-Napoca", new TimeWeight());
         printResult(graph, "Cluj-Napoca", "Timișoara");
+        printPath(graph, "Cluj-Napoca", "Timișoara");
         graph.dijkstra("Cluj-Napoca", new PriceWeight());
         printResult(graph, "Cluj-Napoca", "Timișoara");
+        printPath(graph, "Cluj-Napoca", "Timișoara");
 
         startGUI(graph);
     }
 
-    public static void printResult(Graph graph, String fromCity, String toCity) {
-        System.out.println("The shortest distance from " + fromCity + " to " + toCity + " is " + graph.getDistanceFromSource(toCity));
-        System.out.println("The route: " + graph.getPath(toCity).toString().replace(",", " ->").replace("[", "").replace("]", ""));
-        System.out.println();
+    public static String printResult(Graph graph, String fromCity, String toCity) {
+        String shortestDistance = "The shortest distance from " + fromCity + " to " + toCity + " is " + graph.getDistanceFromSource(toCity);
+        return shortestDistance;
+    }
+
+    public static String printPath(Graph graph, String fromCity, String toCity) {
+        String route = "The route: " + graph.getPath(toCity).toString().replace(",", " ->").replace("[", "").replace("]", "");
+        return route;
     }
 
     private static void startGUI(Graph graph) {
         JFrame frame = new RailwayGUI("Railway Optimisation System", graph);
-        frame.setSize(800, 600);
+        frame.setSize(1000, 1000);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
