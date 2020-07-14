@@ -7,6 +7,9 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
 import static com.Railway.Main.printPath;
 import static com.Railway.Main.printResult;
 
@@ -33,7 +36,9 @@ public class RailwayGUI extends JFrame {
         this.graph = graph;
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         fromCity.setModel(new DefaultComboBoxModel<String>(graph.getCities().toArray(new String[0])));
+        fromCity.setSelectedIndex(-1);
         toCity.setModel(new DefaultComboBoxModel<String>(graph.getCities().toArray(new String[0])));
+        toCity.setSelectedIndex(-1);
 
         groupButton();
         initializeGUI();
@@ -68,6 +73,21 @@ public class RailwayGUI extends JFrame {
                     routeLabel.setText(route);
                 }
 
+            }
+        });
+        fromCity.addItemListener(new ItemListener() {
+            String fromItem="";
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                toCity.addItem(fromItem);
+                toCity.removeItem("");
+                fromItem = fromCity.getSelectedItem().toString();
+                toCity.removeItem(fromItem);
+                if(!fromCity.getSelectedItem().toString().equals(fromItem)){
+                    String newItem = fromCity.getSelectedItem().toString();
+                    toCity.addItem(fromItem);
+                    toCity.removeItem(newItem);
+                }
             }
         });
     }
