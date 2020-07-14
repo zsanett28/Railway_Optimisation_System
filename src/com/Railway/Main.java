@@ -1,10 +1,8 @@
 package com.Railway;
 
-import com.Railway.graph.Edge;
 import com.Railway.graph.Graph;
 import com.Railway.graph.PriceWeight;
 import com.Railway.graph.TimeWeight;
-
 import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -26,7 +24,7 @@ public class Main {
         graph.dijkstra("Cluj-Napoca", new PriceWeight());
         printResult(graph, "Cluj-Napoca", "Timișoara");
 
-        startGUI();
+        startGUI(graph);
     }
 
     public static void printResult(Graph graph, String fromCity, String toCity) {
@@ -35,8 +33,8 @@ public class Main {
         System.out.println();
     }
 
-    private static void startGUI() {
-        JFrame frame = new RailwayGUI("Railway Optimisation System");
+    private static void startGUI(Graph graph) {
+        JFrame frame = new RailwayGUI("Railway Optimisation System", graph);
         frame.setSize(800, 600);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);

@@ -89,4 +89,12 @@ public class Graph {
     public double getDistanceFromSource(String name) {
         return stringToNode.get(name).getDistance();
     }
+
+    public List<String> getCities() {
+        ArrayList<String> cityNames = new ArrayList<>();
+        for (Node node : nodes){
+            cityNames.add(node.getCityName());
+        }
+        return cityNames;
+    }
 }

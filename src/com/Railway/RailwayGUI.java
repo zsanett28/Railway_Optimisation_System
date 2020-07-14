@@ -1,11 +1,11 @@
 package com.Railway;
 
+import com.Railway.graph.Graph;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class RailwayGUI extends JFrame {
     private JPanel mainPanel;
@@ -16,14 +16,14 @@ public class RailwayGUI extends JFrame {
     private JButton submitButton;
     private JPanel mapPanel;
     private JPanel menuPanel;
-    String[] string = {"Cluj-Napoca","Târgu-Mureș","Miercurea-Ciuc", "Timișoara", "Oradea", "Craiova",
-            "București", "Iași", "Constanța", "Brașov", "Sibiu", "Suceava", "Târgu-Jiu", "Alba-Iulia"};
+    private Graph graph;
 
-    public RailwayGUI(String title){
+    public RailwayGUI(String title, Graph graph){
         super(title);
+        this.graph = graph;
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
-        fromCity.setModel(new DefaultComboBoxModel<>(string));
-        toCity.setModel(new DefaultComboBoxModel<>(string));
+        fromCity.setModel(new DefaultComboBoxModel<String>(graph.getCities().toArray(new String[0])));
+        toCity.setModel(new DefaultComboBoxModel<String>(graph.getCities().toArray(new String[0])));
 
         initializeGUI();
         this.setContentPane(mainPanel);
