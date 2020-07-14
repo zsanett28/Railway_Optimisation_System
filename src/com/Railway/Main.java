@@ -30,7 +30,7 @@ public class Main {
     }
 
     public static String printResult(Graph graph, String fromCity, String toCity) {
-        String shortestDistance = "The shortest distance from " + fromCity + " to " + toCity + " is " + graph.getDistanceFromSource(toCity);
+        String shortestDistance = "From " + fromCity + " to " + toCity + ": " + graph.getDistanceFromSource(toCity);
         return shortestDistance;
     }
 

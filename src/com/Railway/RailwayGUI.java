@@ -25,6 +25,7 @@ public class RailwayGUI extends JFrame {
     private JPanel radioButtonPanel;
     private JRadioButton radioTime;
     private JRadioButton radioPrice;
+    private JLabel infoLabel;
     private Graph graph;
 
     public RailwayGUI(String title, Graph graph){
@@ -54,14 +55,16 @@ public class RailwayGUI extends JFrame {
                     graph.dijkstra(fromCity.getSelectedItem().toString(), new PriceWeight());
                     String result = printResult(graph, fromCity.getSelectedItem().toString(), toCity.getSelectedItem().toString());
                     String route = printPath(graph, fromCity.getSelectedItem().toString(), toCity.getSelectedItem().toString());
-                    resultLabel.setText(result);
+                    infoLabel.setText("The cheapest route: ");
+                    resultLabel.setText(result + " lei");
                     routeLabel.setText(route);
                 }
                 if(radioTime.isSelected()){
                     graph.dijkstra(fromCity.getSelectedItem().toString(), new TimeWeight());
                     String result = printResult(graph, fromCity.getSelectedItem().toString(), toCity.getSelectedItem().toString());
                     String route = printPath(graph, fromCity.getSelectedItem().toString(), toCity.getSelectedItem().toString());
-                    resultLabel.setText(result);
+                    infoLabel.setText("The shortest route: ");
+                    resultLabel.setText(result + " min");
                     routeLabel.setText(route);
                 }
 
