@@ -25,7 +25,6 @@ public class Graph {
         Edge edge = new Edge(fromNode, toNode, startTime, endTime, price);
         edges.add(edge);
         fromNode.addEdge(edge);
-        toNode.addEdge(edge);
     }
 
     //Dijkstra algorithm
