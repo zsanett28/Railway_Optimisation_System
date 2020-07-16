@@ -6,6 +6,7 @@ import com.Railway.graph.TimeWeight;
 import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -76,10 +77,11 @@ public class Main {
             while (sc.hasNext()) {
                 String fromCity = sc.next();
                 String toCity = sc.next();
-                double time = sc.nextDouble();
+                LocalTime startTime = LocalTime.parse(sc.next());
+                LocalTime endTime = LocalTime.parse(sc.next());
                 double price = sc.nextDouble();
                 sc.nextLine();
-                graph.addEdge(fromCity, toCity, time, price);
+                graph.addEdge(fromCity, toCity, startTime, endTime, price);
             }
             sc.close();
         } catch (FileNotFoundException e) {
