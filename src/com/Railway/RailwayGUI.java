@@ -18,7 +18,6 @@ public class RailwayGUI extends JFrame {
     private JComboBox<String> toCity;
     private JComboBox<String> fromCity;
     private JPanel routeSelectPanel;
-    private JPanel buttonPanel;
     private JButton submitButton;
     private JPanel mapPanel;
     private JPanel menuPanel;
@@ -35,6 +34,9 @@ public class RailwayGUI extends JFrame {
     private JLabel toCityLabel;
     private JButton findTimeButton;
     private JLabel fromCityMessageLabel;
+    private JPanel timePanel;
+    private JLabel timeLabel;
+    private JLabel radioLabel;
     private final Graph graph;
 
     public RailwayGUI(String title, Graph graph) {
