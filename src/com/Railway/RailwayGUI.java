@@ -37,6 +37,8 @@ public class RailwayGUI extends JFrame {
     private JPanel timePanel;
     private JLabel timeLabel;
     private JLabel radioLabel;
+    private JPanel describePanel;
+    private JLabel textLabel;
     private final Graph graph;
 
     public RailwayGUI(String title, Graph graph) {
