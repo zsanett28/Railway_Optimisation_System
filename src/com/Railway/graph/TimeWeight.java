@@ -4,6 +4,6 @@ public class TimeWeight implements Weight {
 
     @Override
     public double getWeight(Edge edge) {
-        return edge.getTime();
+        return edge.getDuration().getSeconds();
     }
 }
