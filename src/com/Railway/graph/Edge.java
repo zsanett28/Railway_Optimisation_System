@@ -1,16 +1,21 @@
 package com.Railway.graph;
 
+import java.time.Duration;
+import java.time.LocalTime;
+
 public class Edge {
 
     private final Node fromNode;
     private final Node toNode;
-    private final double time;
+    private final LocalTime startTime;
+    private final LocalTime endTime;
     private final double price;
 
-    public Edge(Node fromNode, Node toNode, double time, double price) {
+    public Edge(Node fromNode, Node toNode, LocalTime startTime, LocalTime endTime, double price) {
         this.fromNode = fromNode;
         this.toNode = toNode;
-        this.time = time;
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.price = price;
     }
 
@@ -22,8 +27,12 @@ public class Edge {
         return toNode;
     }
 
-    public double getTime() {
-        return time;
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
     }
 
     public double getPrice() {
@@ -33,8 +42,14 @@ public class Edge {
     public Node getNeighbour(Node node) {
         if (fromNode == node) {
             return toNode;
-        } else {
+        } else if (toNode == node) {
             return fromNode;
+        } else {
+            throw new IllegalArgumentException();
         }
+    }
+
+    public Duration getDuration(){
+        return Duration.between(startTime, endTime);
     }
 }

@@ -21,7 +21,7 @@ public class Graph {
     public void addEdge(String fromCity, String toCity, double time, double price) {
         Node fromNode = stringToNode.get(fromCity);
         Node toNode = stringToNode.get(toCity);
-        Edge edge = new Edge(fromNode, toNode, time, price);
+        Edge edge = new Edge(fromNode, toNode, time, startTime, endTime, price);
         edges.add(edge);
         fromNode.addEdge(edge);
         toNode.addEdge(edge);
