@@ -30,7 +30,11 @@ public class RailwayGUI extends JFrame {
     private JRadioButton radioPrice;
     private JLabel infoLabel;
     private JLabel radioMessageLabel;
-    private JLabel comboBoxMessageLabel;
+    private JLabel toCityMessageLabel;
+    private JLabel fromCityLabel;
+    private JLabel toCityLabel;
+    private JButton findTimeButton;
+    private JLabel fromCityMessageLabel;
     private final Graph graph;
 
     public RailwayGUI(String title, Graph graph) {
@@ -59,11 +63,21 @@ public class RailwayGUI extends JFrame {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (fromCity.getSelectedItem() == null || toCity.getSelectedItem() == null) {
-                    comboBoxMessageLabel.setText("Choose the departure and arrival point!");
+                if (fromCity.getSelectedItem() == null && toCity.getSelectedItem() == null) {
+                    toCityMessageLabel.setText("Choose arrival and departure point!");
                     return;
                 }
-                comboBoxMessageLabel.setText("");
+                toCityMessageLabel.setText("");
+                if (fromCity.getSelectedItem() == null) {
+                    fromCityMessageLabel.setText("Choose departure point!");
+                    return;
+                }
+                fromCityMessageLabel.setText("");
+                if (toCity.getSelectedItem() == null) {
+                    toCityMessageLabel.setText("Choose arrival point!");
+                    return;
+                }
+                toCityMessageLabel.setText("");
                 if (radioPrice.isSelected()) {
                     radioMessageLabel.setText("");
                     graph.dijkstra(fromCity.getSelectedItem().toString(), new PriceWeight());
