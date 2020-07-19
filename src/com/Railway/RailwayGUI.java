@@ -50,6 +50,7 @@ public class RailwayGUI extends JFrame {
         //mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
         menuPanel.setSize(450,600);
+
         imageLabel.setSize(550,600);
         ImageIcon ico= new ImageIcon("src/images/train-cfr.jpg");
         Image image = ico.getImage();
@@ -100,6 +101,12 @@ public class RailwayGUI extends JFrame {
                 if (!validateInput()) {
                     return;
                 }
+
+                ImageIcon icon= new ImageIcon("src/images/map.jpg");
+                Image image = icon.getImage();
+                Image size = image.getScaledInstance(imageLabel.getWidth(),imageLabel.getHeight(),Image.SCALE_SMOOTH);
+                ImageIcon map= new ImageIcon(size);
+                imageLabel.setIcon(map);
 
                 String fromCityName = fromCity.getSelectedItem().toString();
                 String toCityName = toCity.getSelectedItem().toString();
