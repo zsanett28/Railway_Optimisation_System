@@ -9,7 +9,7 @@ public class Node {
     private Object distance;
     private final ArrayList<Edge> edges = new ArrayList<>();
     private final String cityName;
-    private Node parent;
+    private Edge incomingEdge;
 
     public Node(String cityName) {
         this.cityName = cityName;
@@ -35,12 +35,12 @@ public class Node {
         return cityName;
     }
 
-    public Node getParent() {
-        return parent;
+    public Edge getIncomingEdge() {
+        return incomingEdge;
     }
 
-    public void setParent(Node parent) {
-        this.parent = parent;
+    public void setIncomingEdge(Edge incomingEdge) {
+        this.incomingEdge = incomingEdge;
     }
 
     @Override
@@ -48,13 +48,16 @@ public class Node {
         if (this == o) return true;
         if (!(o instanceof Node)) return false;
         Node node = (Node) o;
-        return Objects.equals(getEdges(), node.getEdges()) &&
-                Objects.equals(getCityName(), node.getCityName()) &&
-                Objects.equals(getParent(), node.getParent());
+        return Objects.equals(getCityName(), node.getCityName());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getCityName());
+    }
+
+    @Override
+    public String toString() {
+        return cityName;
     }
 }

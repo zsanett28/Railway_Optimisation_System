@@ -52,4 +52,15 @@ public class Edge {
     public Duration getDuration(){
         return Duration.between(startTime, endTime);
     }
+
+    @Override
+    public String toString() {
+        return "Edge{" +
+                "fromNode=" + fromNode +
+                ", toNode=" + toNode +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", price=" + price +
+                '}';
+    }
 }

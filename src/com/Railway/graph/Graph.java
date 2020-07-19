@@ -48,7 +48,7 @@ public class Graph {
                 Node neighbour = edge.getNeighbour(minNode);
                 T w = weight.getWeight(edge);
 
-                relax(minNode, neighbour, w, accumulator);
+                relax(minNode, neighbour, edge, w, accumulator);
 
                 if (!visitedNodes.contains(neighbour)) {
                     nodeQueue.add(neighbour);
@@ -57,31 +57,34 @@ public class Graph {
         }
     }
 
-    private <T extends Comparable<T>> void relax(Node current, Node neighbour, T weight, BinaryOperator<T> accumulator) {
+    private <T extends Comparable<T>> void relax(Node current, Node neighbour, Edge edge, T weight, BinaryOperator<T> accumulator) {
         T weightSum = accumulator.apply((T) current.getDistance(), weight);
 
         if (weightSum.compareTo((T) neighbour.getDistance()) < 0) {
             neighbour.setDistance(weightSum);
-            neighbour.setParent(current);
+            neighbour.setIncomingEdge(edge);
         }
     }
 
     private <T extends Comparable<T>> void initializeDijkstra(Node source, T maxDistance, T minDistance) {
         for (Node node : nodes) {
             node.setDistance(maxDistance);
-            node.setParent(null);
+            node.setIncomingEdge(null);
         }
         source.setDistance(minDistance);
     }
 
-    public List<String> getPath(String target) {
+    public List<Edge> getPath(String target){
         return getPath(stringToNode.get(target));
     }
 
-    private List<String> getPath(Node target) {
-        ArrayList<String> path = new ArrayList<>();
-        for (Node node = target; node != null; node = node.getParent()) {
-            path.add(node.getCityName());
+    private List<Edge> getPath(Node target) {
+        ArrayList<Edge> path = new ArrayList<>();
+        Edge edge = target.getIncomingEdge();
+
+        while (edge != null) {
+            path.add(edge);
+            edge = edge.getFromNode().getIncomingEdge();
         }
 
         Collections.reverse(path);
