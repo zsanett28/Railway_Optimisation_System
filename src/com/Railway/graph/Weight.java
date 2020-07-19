@@ -1,6 +1,6 @@
 package com.Railway.graph;
 
-public interface Weight {
+public interface Weight<T> {
 
-    double getWeight(Edge edge);
+    T getWeight(Edge edge);
 }

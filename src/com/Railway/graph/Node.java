@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Node {
 
-    private double distance;
+    private Object distance;
     private boolean visited;
     private final ArrayList<Edge> edges = new ArrayList<>();
     private final String cityName;
@@ -16,11 +16,11 @@ public class Node {
         this.cityName = cityName;
     }
 
-    public double getDistance() {
+    public Object getDistance() {
         return distance;
     }
 
-    public void setDistance(double distance) {
+    public void setDistance(Object distance) {
         this.distance = distance;
     }
 
