@@ -50,6 +50,7 @@ public class RailwayGUI extends JFrame {
         //mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
         menuPanel.setSize(450,600);
+        mapPanel.setSize(550,600);
 
         imageLabel.setSize(550,600);
         ImageIcon ico= new ImageIcon("src/images/train-cfr.jpg");
