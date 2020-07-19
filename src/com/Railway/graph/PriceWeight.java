@@ -1,9 +1,9 @@
 package com.Railway.graph;
 
-public class PriceWeight implements Weight {
+public class PriceWeight implements Weight<Double> {
 
     @Override
-    public double getWeight(Edge edge) {
+    public Double getWeight(Edge edge) {
         return edge.getPrice();
     }
 }
