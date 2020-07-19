@@ -37,6 +37,7 @@ public class RailwayGUI extends JFrame {
     private JPanel describePanel;
     private JLabel textLabel;
     private JLabel imageLabel;
+    private JPanel bottomPanel;
 
     public RailwayGUI(String title, Graph graph) {
         super(title);
