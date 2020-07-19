@@ -5,12 +5,10 @@ import java.util.*;
 
 public class Graph {
 
-    //private variables
     private final List<Node> nodes = new ArrayList<>();
     private final List<Edge> edges = new ArrayList<>();
     private final Map<String, Node> stringToNode = new HashMap<>();
 
-    //constructor
     public Graph(List<String> names) {
         for (String name : names) {
             Node node = new Node(name);
