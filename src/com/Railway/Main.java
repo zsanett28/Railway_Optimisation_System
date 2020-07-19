@@ -24,7 +24,7 @@ public class Main {
 
     private static void startGUI(Graph graph) {
         JFrame frame = new RailwayGUI("Railway Optimisation System", graph);
-        frame.setSize(800, 600);
+        frame.setSize(1000, 600);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

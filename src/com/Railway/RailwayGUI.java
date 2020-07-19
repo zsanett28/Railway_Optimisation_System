@@ -4,6 +4,7 @@ import com.Railway.graph.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -35,6 +36,7 @@ public class RailwayGUI extends JFrame {
     private JLabel radioLabel;
     private JPanel describePanel;
     private JLabel textLabel;
+    private JLabel imageLabel;
 
     public RailwayGUI(String title, Graph graph) {
         super(title);
@@ -45,7 +47,16 @@ public class RailwayGUI extends JFrame {
     }
 
     private void initializeGUI() {
-        mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
+        //mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
+
+        menuPanel.setSize(450,600);
+        imageLabel.setSize(550,600);
+        ImageIcon ico= new ImageIcon("src/images/train-cfr.jpg");
+        Image image = ico.getImage();
+        Image siz = image.getScaledInstance(imageLabel.getWidth(),imageLabel.getHeight(),Image.SCALE_SMOOTH);
+        ImageIcon cfr= new ImageIcon(siz);
+        imageLabel.setIcon(cfr);
+
         fromCity.setModel(new DefaultComboBoxModel<>(graph.getCities().toArray(new String[0])));
         fromCity.setSelectedIndex(-1);
         toCity.setModel(new DefaultComboBoxModel<>(graph.getCities().toArray(new String[0])));
