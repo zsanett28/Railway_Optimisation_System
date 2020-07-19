@@ -2,6 +2,7 @@ package com.Railway.graph;
 
 import java.time.LocalTime;
 import java.util.*;
+import java.util.function.BinaryOperator;
 
 public class Graph {
 
@@ -26,15 +27,17 @@ public class Graph {
     }
 
     //Dijkstra algorithm
-    public void dijkstra(String source, Weight weight) {
-        dijkstra(stringToNode.get(source), weight);
+    public <T extends Comparable<T>> void dijkstra(String source, Weight<T> weight, Comparator<Node> nodeComparator,
+                                                   T maxDistance, T minDistance, BinaryOperator<T> accumulator) {
+        dijkstra(stringToNode.get(source), weight, nodeComparator, maxDistance, minDistance, accumulator);
     }
 
-    private void dijkstra(Node source, Weight weight) {
-        initializeDijkstra(source);
+    private <T extends Comparable<T>> void dijkstra(Node source, Weight<T> weight, Comparator<Node> nodeComparator,
+                                                    T maxDistance, T minDistance, BinaryOperator<T> accumulator) {
+        initializeDijkstra(source, maxDistance, minDistance);
 
         Set<Node> visitedNodes = new HashSet<>();
-        Queue<Node> nodeQueue = new PriorityQueue<>(new NodeComparator());
+        Queue<Node> nodeQueue = new PriorityQueue<>(nodeComparator);
         nodeQueue.add(source);
 
         while (!nodeQueue.isEmpty()) {
@@ -43,9 +46,9 @@ public class Graph {
 
             for (Edge edge : minNode.getEdges()) {
                 Node neighbour = edge.getNeighbour(minNode);
-                double w = weight.getWeight(edge);
+                T w = weight.getWeight(edge);
 
-                relax(minNode, neighbour, w);
+                relax(minNode, neighbour, w, accumulator);
 
                 if (!visitedNodes.contains(neighbour)) {
                     nodeQueue.add(neighbour);
@@ -54,20 +57,22 @@ public class Graph {
         }
     }
 
-    private void relax(Node current, Node neighbour, double weight) {
-        if (neighbour.getDistance() > current.getDistance() + weight) {
-            neighbour.setDistance(current.getDistance() + weight);
+    private <T extends Comparable<T>> void relax(Node current, Node neighbour, T weight, BinaryOperator<T> accumulator) {
+        T weightSum = accumulator.apply((T) current.getDistance(), weight);
+
+        if (weightSum.compareTo((T) neighbour.getDistance()) < 0) {
+            neighbour.setDistance(weightSum);
             neighbour.setParent(current);
         }
     }
 
-    private void initializeDijkstra(Node source) {
+    private <T extends Comparable<T>> void initializeDijkstra(Node source, T maxDistance, T minDistance) {
         for (Node node : nodes) {
-            node.setDistance(Double.MAX_VALUE);
+            node.setDistance(maxDistance);
             node.setParent(null);
             node.setVisited(false);
         }
-        source.setDistance(0);
+        source.setDistance(minDistance);
     }
 
     public List<String> getPath(String target) {
@@ -84,13 +89,13 @@ public class Graph {
         return path;
     }
 
-    public double getDistanceFromSource(String name) {
+    public Object getDistanceFromSource(String name) {
         return stringToNode.get(name).getDistance();
     }
 
     public List<String> getCities() {
         ArrayList<String> cityNames = new ArrayList<>();
-        for (Node node : nodes){
+        for (Node node : nodes) {
             cityNames.add(node.getCityName());
         }
         return cityNames;
