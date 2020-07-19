@@ -1,8 +1,7 @@
 package com.Railway;
 
 import com.Railway.graph.Graph;
-import com.Railway.graph.PriceWeight;
-import com.Railway.graph.TimeWeight;
+
 import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,24 +19,7 @@ public class Main {
 
         readRoutesFromFile("routes.txt", graph);
 
-        graph.dijkstra("Cluj-Napoca", new TimeWeight());
-        printResult(graph, "Cluj-Napoca", "Timișoara");
-        printPath(graph, "Cluj-Napoca", "Timișoara");
-        graph.dijkstra("Cluj-Napoca", new PriceWeight());
-        printResult(graph, "Cluj-Napoca", "Timișoara");
-        printPath(graph, "Cluj-Napoca", "Timișoara");
-
         startGUI(graph);
-    }
-
-    public static String printResult(Graph graph, String fromCity, String toCity) {
-        String shortestDistance = "From " + fromCity + " to " + toCity + ": " + graph.getDistanceFromSource(toCity);
-        return shortestDistance;
-    }
-
-    public static String printPath(Graph graph, String fromCity, String toCity) {
-        String route = "The route: " + graph.getPath(toCity).toString().replace(",", " ->").replace("[", "").replace("]", "");
-        return route;
     }
 
     private static void startGUI(Graph graph) {
@@ -50,7 +32,7 @@ public class Main {
     }
 
     private static List<String> readCitiesFromFile(String path) {
-        List <String> names = new ArrayList<>();
+        List<String> names = new ArrayList<>();
         String cityname;
         Scanner sc;
 
