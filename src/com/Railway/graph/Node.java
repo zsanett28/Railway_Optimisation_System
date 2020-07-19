@@ -7,7 +7,6 @@ import java.util.Objects;
 public class Node {
 
     private Object distance;
-    private boolean visited;
     private final ArrayList<Edge> edges = new ArrayList<>();
     private final String cityName;
     private Node parent;
@@ -22,14 +21,6 @@ public class Node {
 
     public void setDistance(Object distance) {
         this.distance = distance;
-    }
-
-    public boolean isVisited() {
-        return visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
     }
 
     public List<Edge> getEdges() {

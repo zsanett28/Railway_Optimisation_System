@@ -70,7 +70,6 @@ public class Graph {
         for (Node node : nodes) {
             node.setDistance(maxDistance);
             node.setParent(null);
-            node.setVisited(false);
         }
         source.setDistance(minDistance);
     }
