@@ -64,7 +64,9 @@
                     <preferred-size width="200" height="25"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-6113333"/>
+                </properties>
               </component>
               <component id="f0d88" class="javax.swing.JLabel" binding="toCityMessageLabel">
                 <constraints>
@@ -80,7 +82,11 @@
                     <preferred-size width="200" height="25"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-6113333"/>
+                  <editable value="false"/>
+                  <enabled value="true"/>
+                </properties>
               </component>
               <component id="a625" class="javax.swing.JLabel" binding="fromCityLabel">
                 <constraints>
