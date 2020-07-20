@@ -67,6 +67,13 @@ public class RailwayGUI extends JFrame {
         radioGroup.add(radioTime);
         radioGroup.add(radioPrice);
 
+        ImageIcon b= new ImageIcon("src/images/icon.png");
+        Image g= b.getImage();
+        Image kep=g.getScaledInstance(18,18,Image.SCALE_SMOOTH);
+        ImageIcon button= new ImageIcon(kep);
+        submitButton.setIcon(button);
+
+
         this.setContentPane(mainPanel);
     }
 
