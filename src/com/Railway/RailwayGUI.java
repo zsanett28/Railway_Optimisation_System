@@ -3,7 +3,6 @@ package com.Railway;
 import com.Railway.graph.*;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,7 +32,6 @@ public class RailwayGUI extends JFrame {
     private JLabel fromCityLabel;
     private JLabel toCityLabel;
     private JLabel fromCityMessageLabel;
-    private JLabel radioLabel;
     private JPanel describePanel;
     private JLabel textLabel;
     private JLabel imageLabel;
