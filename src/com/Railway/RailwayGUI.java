@@ -235,85 +235,85 @@ public class RailwayGUI extends JFrame {
                     if( path.size() != 1) {
                         if(edge.getFromNode().getCityName().equals("Cluj-Napoca"))
                         {
-                            Circle circ1 = new Circle(167,213,12,12);
+                            Circle circ1 = new Circle(169,213,12,12);
                             circ1.setOpaque(false);
                             imageLabel.add(circ1);
                         }
                         if(edge.getFromNode().getCityName().equals("Târgu Mureș"))
                         {
-                            Circle circ2 = new Circle(167,213,12,12);
+                            Circle circ2 = new Circle(224,237,12,12);
                             circ2.setOpaque(false);
                             imageLabel.add(circ2);
                         }
                         if(edge.getFromNode().getCityName().equals("Miercurea Ciuc"))
                         {
-                            Circle circ3 = new Circle(167,213,12,12);
+                            Circle circ3 = new Circle(300,258,12,12);
                             circ3.setOpaque(false);
                             imageLabel.add(circ3);
                         }
                         if(edge.getFromNode().getCityName().equals("Timișoara"))
                         {
-                            Circle circ4 = new Circle(167,213,12,12);
+                            Circle circ4 = new Circle(20,313,12,12);
                             circ4.setOpaque(false);
                             imageLabel.add(circ4);
                         }
                         if(edge.getFromNode().getCityName().equals("Oradea"))
                         {
-                            Circle circ5 = new Circle(167,213,12,12);
+                            Circle circ5 = new Circle(65,185,12,12);
                             circ5.setOpaque(false);
                             imageLabel.add(circ5);
                         }
                         if(edge.getFromNode().getCityName().equals("Craiova"))
                         {
-                            Circle circ6 = new Circle(167,213,12,12);
+                            Circle circ6 = new Circle(180,460,12,12);
                             circ6.setOpaque(false);
                             imageLabel.add(circ6);
                         }
                         if(edge.getFromNode().getCityName().equals("București"))
                         {
-                            Circle circ7 = new Circle(167,213,12,12);
+                            Circle circ7 = new Circle(323,450,12,12);
                             circ7.setOpaque(false);
                             imageLabel.add(circ7);
                         }
                         if(edge.getFromNode().getCityName().equals("Iași"))
                         {
-                            Circle circ8 = new Circle(167,213,12,12);
+                            Circle circ8 = new Circle(410,175,12,12);
                             circ8.setOpaque(false);
                             imageLabel.add(circ8);
                         }
                         if(edge.getFromNode().getCityName().equals("Constanța"))
                         {
-                            Circle circ9 = new Circle(167,213,12,12);
+                            Circle circ9 = new Circle(475,470,12,12);
                             circ9.setOpaque(false);
                             imageLabel.add(circ9);
                         }
                         if(edge.getFromNode().getCityName().equals("Brașov"))
                         {
-                            Circle circ10 = new Circle(167,213,12,12);
+                            Circle circ10 = new Circle(290,325,12,12);
                             circ10.setOpaque(false);
                             imageLabel.add(circ10);
                         }
                         if(edge.getFromNode().getCityName().equals("Sibiu"))
                         {
-                            Circle circ11 = new Circle(167,213,12,12);
+                            Circle circ11 = new Circle(202,312,12,12);
                             circ11.setOpaque(false);
                             imageLabel.add(circ11);
                         }
                         if(edge.getFromNode().getCityName().equals("Suceava"))
                         {
-                            Circle circ12 = new Circle(167,213,12,12);
+                            Circle circ12 = new Circle(327,129,12,12);
                             circ12.setOpaque(false);
                             imageLabel.add(circ12);
                         }
                         if(edge.getFromNode().getCityName().equals("Târgu Jiu"))
                         {
-                            Circle circ13 = new Circle(167,213,12,12);
+                            Circle circ13 = new Circle(142,386,12,12);
                             circ13.setOpaque(false);
                             imageLabel.add(circ13);
                         }
                         if(edge.getFromNode().getCityName().equals("Alba Iulia"))
                         {
-                            Circle circ14 = new Circle(167,213,12,12);
+                            Circle circ14 = new Circle(165,282,12,12);
                             circ14.setOpaque(false);
                             imageLabel.add(circ14);
                         }
@@ -670,7 +670,12 @@ public class RailwayGUI extends JFrame {
                 }
 
                 resultLabel.setText(result);
+
             }
+
+
+
+
         });
 
         fromCity.addItemListener(new ItemListener() {
@@ -690,6 +695,8 @@ public class RailwayGUI extends JFrame {
             }
         });
     }
+
+
 
 
 }
