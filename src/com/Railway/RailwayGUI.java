@@ -151,6 +151,22 @@ public class RailwayGUI extends JFrame {
                 }
 
                 List<Edge> path = graph.getPath(toCityName);
+
+
+                for (Edge edge : path) {
+                    if( path.size() != 1) {
+                        if(edge.getFromNode().getCityName().equals("Cluj-Napoca"))
+                        {
+                            Circle circ1 = new Circle(167,213,12,12);
+                            circ1.setOpaque(false);
+                            imageLabel.add(circ1);
+                        }
+                    }
+
+                }
+
+
+
                 String result;
 
                 if (path.isEmpty()) {
