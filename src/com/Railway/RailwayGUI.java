@@ -331,6 +331,330 @@ public class RailwayGUI extends JFrame {
                         lin1.setOpaque(false);
                         imageLabel.add(lin1);
                     }
+                    if(edge.getFromNode().getCityName().equals("Cluj-Napoca") && edge.getToNode().getCityName().equals("Miercurea Ciuc"))
+                    {
+                        Line lin2 = new Line(500,200,100,60);
+                        lin2.setOpaque(false);
+                        imageLabel.add(lin2);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Cluj-Napoca") && edge.getToNode().getCityName().equals("Oradea"))
+                    {
+                        Line lin3 = new Line(500,200,100,60);
+                        lin3.setOpaque(false);
+                        imageLabel.add(lin3);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Cluj-Napoca") && edge.getToNode().getCityName().equals("Brașov"))
+                    {
+                        Line lin4 = new Line(500,200,100,60);
+                        lin4.setOpaque(false);
+                        imageLabel.add(lin4);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Cluj-Napoca") && edge.getToNode().getCityName().equals("Suceava"))
+                    {
+                        Line lin5 = new Line(500,200,100,60);
+                        lin5.setOpaque(false);
+                        imageLabel.add(lin5);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Cluj-Napoca") && edge.getToNode().getCityName().equals("Alba Iulia"))
+                    {
+                        Line lin6 = new Line(500,200,100,60);
+                        lin6.setOpaque(false);
+                        imageLabel.add(lin6);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Târgu Mureș") && edge.getToNode().getCityName().equals("Cluj-Napoca"))
+                    {
+                        Line lin7 = new Line(500,200,100,60);
+                        lin7.setOpaque(false);
+                        imageLabel.add(lin7);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Târgu Mureș") && edge.getToNode().getCityName().equals("Miercurea Ciuc"))
+                    {
+                        Line lin8 = new Line(500,200,100,60);
+                        lin8.setOpaque(false);
+                        imageLabel.add(lin8);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Târgu Mureș") && edge.getToNode().getCityName().equals("Timișoara"))
+                    {
+                        Line lin9 = new Line(500,200,100,60);
+                        lin9.setOpaque(false);
+                        imageLabel.add(lin9);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Târgu Mureș") && edge.getToNode().getCityName().equals("Brașov"))
+                    {
+                        Line lin10 = new Line(500,200,100,60);
+                        lin10.setOpaque(false);
+                        imageLabel.add(lin10);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Târgu Mureș") && edge.getToNode().getCityName().equals("Sibiu"))
+                    {
+                        Line lin11 = new Line(500,200,100,60);
+                        lin11.setOpaque(false);
+                        imageLabel.add(lin11);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Târgu Mureș") && edge.getToNode().getCityName().equals("Alba Iulia"))
+                    {
+                        Line lin12 = new Line(500,200,100,60);
+                        lin12.setOpaque(false);
+                        imageLabel.add(lin12);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Miercurea Ciuc") && edge.getToNode().getCityName().equals("Cluj-Napoca"))
+                    {
+                        Line lin13 = new Line(500,200,100,60);
+                        lin13.setOpaque(false);
+                        imageLabel.add(lin13);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Miercurea Ciuc") && edge.getToNode().getCityName().equals("Târgu Mureș"))
+                    {
+                        Line lin14 = new Line(500,200,100,60);
+                        lin14.setOpaque(false);
+                        imageLabel.add(lin14);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Miercurea Ciuc") && edge.getToNode().getCityName().equals("Brașov"))
+                    {
+                        Line lin15 = new Line(500,200,100,60);
+                        lin15.setOpaque(false);
+                        imageLabel.add(lin15);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Timișoara") && edge.getToNode().getCityName().equals("Cluj-Napoca"))
+                    {
+                        Line lin16 = new Line(500,200,100,60);
+                        lin16.setOpaque(false);
+                        imageLabel.add(lin16);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Timișoara") && edge.getToNode().getCityName().equals("Târgu Mureș"))
+                    {
+                        Line lin17 = new Line(500,200,100,60);
+                        lin17.setOpaque(false);
+                        imageLabel.add(lin17);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Timișoara") && edge.getToNode().getCityName().equals("Oradea"))
+                    {
+                        Line lin18 = new Line(500,200,100,60);
+                        lin18.setOpaque(false);
+                        imageLabel.add(lin18);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Timișoara") && edge.getToNode().getCityName().equals("Craiova"))
+                    {
+                        Line lin19 = new Line(500,200,100,60);
+                        lin19.setOpaque(false);
+                        imageLabel.add(lin19);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Timișoara") && edge.getToNode().getCityName().equals("Sibiu"))
+                    {
+                        Line lin20 = new Line(500,200,100,60);
+                        lin20.setOpaque(false);
+                        imageLabel.add(lin20);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Timișoara") && edge.getToNode().getCityName().equals("Alba Iulia"))
+                    {
+                        Line lin21 = new Line(500,200,100,60);
+                        lin21.setOpaque(false);
+                        imageLabel.add(lin21);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Oradea") && edge.getToNode().getCityName().equals("Cluj-Napoca"))
+                    {
+                        Line lin22 = new Line(500,200,100,60);
+                        lin22.setOpaque(false);
+                        imageLabel.add(lin22);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Oradea") && edge.getToNode().getCityName().equals("Timișoara"))
+                    {
+                        Line lin23 = new Line(500,200,100,60);
+                        lin23.setOpaque(false);
+                        imageLabel.add(lin23);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Craiova") && edge.getToNode().getCityName().equals("Timișoara"))
+                    {
+                        Line lin24 = new Line(500,200,100,60);
+                        lin24.setOpaque(false);
+                        imageLabel.add(lin24);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Craiova") && edge.getToNode().getCityName().equals("București"))
+                    {
+                        Line lin25 = new Line(500,200,100,60);
+                        lin25.setOpaque(false);
+                        imageLabel.add(lin25);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Craiova") && edge.getToNode().getCityName().equals("Sibiu"))
+                    {
+                        Line lin26 = new Line(500,200,100,60);
+                        lin26.setOpaque(false);
+                        imageLabel.add(lin26);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Craiova") && edge.getToNode().getCityName().equals("Târgu Jiu"))
+                    {
+                        Line lin27 = new Line(500,200,100,60);
+                        lin27.setOpaque(false);
+                        imageLabel.add(lin27);
+                    }
+                    if(edge.getFromNode().getCityName().equals("București") && edge.getToNode().getCityName().equals("Craiova"))
+                    {
+                        Line lin28 = new Line(500,200,100,60);
+                        lin28.setOpaque(false);
+                        imageLabel.add(lin28);
+                    }
+                    if(edge.getFromNode().getCityName().equals("București") && edge.getToNode().getCityName().equals("Iași"))
+                    {
+                        Line lin29 = new Line(500,200,100,60);
+                        lin29.setOpaque(false);
+                        imageLabel.add(lin29);
+                    }
+                    if(edge.getFromNode().getCityName().equals("București") && edge.getToNode().getCityName().equals("Constanța"))
+                    {
+                        Line lin30 = new Line(500,200,100,60);
+                        lin30.setOpaque(false);
+                        imageLabel.add(lin30);
+                    }
+                    if(edge.getFromNode().getCityName().equals("București") && edge.getToNode().getCityName().equals("Brașov"))
+                    {
+                        Line lin31 = new Line(500,200,100,60);
+                        lin31.setOpaque(false);
+                        imageLabel.add(lin31);
+                    }
+                    if(edge.getFromNode().getCityName().equals("București") && edge.getToNode().getCityName().equals("Suceava"))
+                    {
+                        Line lin32 = new Line(500,200,100,60);
+                        lin32.setOpaque(false);
+                        imageLabel.add(lin32);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Iași") && edge.getToNode().getCityName().equals("București"))
+                    {
+                        Line lin33 = new Line(500,200,100,60);
+                        lin33.setOpaque(false);
+                        imageLabel.add(lin33);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Iași") && edge.getToNode().getCityName().equals("Suceava"))
+                    {
+                        Line lin34 = new Line(500,200,100,60);
+                        lin34.setOpaque(false);
+                        imageLabel.add(lin34);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Constanța") && edge.getToNode().getCityName().equals("București"))
+                    {
+                        Line lin35 = new Line(500,200,100,60);
+                        lin35.setOpaque(false);
+                        imageLabel.add(lin35);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Brașov") && edge.getToNode().getCityName().equals("Cluj-Napoca"))
+                    {
+                        Line lin36 = new Line(500,200,100,60);
+                        lin36.setOpaque(false);
+                        imageLabel.add(lin36);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Brașov") && edge.getToNode().getCityName().equals("Miercurea Ciuc"))
+                    {
+                        Line lin37 = new Line(500,200,100,60);
+                        lin37.setOpaque(false);
+                        imageLabel.add(lin37);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Brașov") && edge.getToNode().getCityName().equals("București"))
+                    {
+                        Line lin38 = new Line(500,200,100,60);
+                        lin38.setOpaque(false);
+                        imageLabel.add(lin38);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Brașov") && edge.getToNode().getCityName().equals("Sibiu"))
+                    {
+                        Line lin39 = new Line(500,200,100,60);
+                        lin39.setOpaque(false);
+                        imageLabel.add(lin39);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Brașov") && edge.getToNode().getCityName().equals("Alba Iulia"))
+                    {
+                        Line lin40 = new Line(500,200,100,60);
+                        lin40.setOpaque(false);
+                        imageLabel.add(lin40);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Sibiu") && edge.getToNode().getCityName().equals("Târgu Mureș"))
+                    {
+                        Line lin41 = new Line(500,200,100,60);
+                        lin41.setOpaque(false);
+                        imageLabel.add(lin41);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Sibiu") && edge.getToNode().getCityName().equals("Timișoara"))
+                    {
+                        Line lin42 = new Line(500,200,100,60);
+                        lin42.setOpaque(false);
+                        imageLabel.add(lin42);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Sibiu") && edge.getToNode().getCityName().equals("Craiova"))
+                    {
+                        Line lin43 = new Line(500,200,100,60);
+                        lin43.setOpaque(false);
+                        imageLabel.add(lin43);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Sibiu") && edge.getToNode().getCityName().equals("Brașov"))
+                    {
+                        Line lin44 = new Line(500,200,100,60);
+                        lin44.setOpaque(false);
+                        imageLabel.add(lin44);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Sibiu") && edge.getToNode().getCityName().equals("Alba Iulia"))
+                    {
+                        Line lin45 = new Line(500,200,100,60);
+                        lin45.setOpaque(false);
+                        imageLabel.add(lin45);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Suceava") && edge.getToNode().getCityName().equals("București"))
+                    {
+                        Line lin46 = new Line(500,200,100,60);
+                        lin46.setOpaque(false);
+                        imageLabel.add(lin46);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Suceava") && edge.getToNode().getCityName().equals("Iași"))
+                    {
+                        Line lin47 = new Line(500,200,100,60);
+                        lin47.setOpaque(false);
+                        imageLabel.add(lin47);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Târgu Jiu") && edge.getToNode().getCityName().equals("Craiova"))
+                    {
+                        Line lin48 = new Line(500,200,100,60);
+                        lin48.setOpaque(false);
+                        imageLabel.add(lin48);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Târgu Jiu") && edge.getToNode().getCityName().equals("Alba Iulia"))
+                    {
+                        Line lin49 = new Line(500,200,100,60);
+                        lin49.setOpaque(false);
+                        imageLabel.add(lin49);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Alba Iulia") && edge.getToNode().getCityName().equals("Cluj-Napoca"))
+                    {
+                        Line lin50 = new Line(500,200,100,60);
+                        lin50.setOpaque(false);
+                        imageLabel.add(lin50);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Alba Iulia") && edge.getToNode().getCityName().equals("Târgu Mureș"))
+                    {
+                        Line lin51 = new Line(500,200,100,60);
+                        lin51.setOpaque(false);
+                        imageLabel.add(lin51);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Alba Iulia") && edge.getToNode().getCityName().equals("Timișoara"))
+                    {
+                        Line lin52 = new Line(500,200,100,60);
+                        lin52.setOpaque(false);
+                        imageLabel.add(lin52);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Alba Iulia") && edge.getToNode().getCityName().equals("Brașov"))
+                    {
+                        Line lin53 = new Line(500,200,100,60);
+                        lin53.setOpaque(false);
+                        imageLabel.add(lin53);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Alba Iulia") && edge.getToNode().getCityName().equals("Sibiu"))
+                    {
+                        Line lin54 = new Line(500,200,100,60);
+                        lin54.setOpaque(false);
+                        imageLabel.add(lin54);
+                    }
+                    if(edge.getFromNode().getCityName().equals("Alba Iulia") && edge.getToNode().getCityName().equals("Târgu Jiu"))
+                    {
+                        Line lin55 = new Line(500,200,100,60);
+                        lin55.setOpaque(false);
+                        imageLabel.add(lin55);
+                    }
 
 
                 }
