@@ -20,8 +20,8 @@ public class Line extends JPanel {
     public void paint(Graphics g) {
 
         //super.paint(g);
-        Graphics2D g2= (Graphics2D) g;
-        g2.setColor(Color.black);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setColor(Color.red);
         g2.drawLine(x,y,z,t);
     }
 }

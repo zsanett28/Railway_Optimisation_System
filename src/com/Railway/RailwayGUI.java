@@ -166,6 +166,19 @@ public class RailwayGUI extends JFrame {
                 }
 
 
+                for (Edge edge : path) {
+
+                    if(edge.getFromNode().getCityName().equals("Cluj-Napoca") && edge.getToNode().getCityName().equals("Târgu Mureș"))
+                    {
+                        Line lin1 = new Line(500,200,100,60);
+                        lin1.setOpaque(false);
+                        imageLabel.add(lin1);
+                    }
+
+
+                }
+
+
 
                 String result;
 
