@@ -109,6 +109,13 @@ public class RailwayGUI extends JFrame {
                     return;
                 }
 
+
+                Component[] components = imageLabel.getComponents();
+                for (int i=0; i<components.length; i++) {
+                    components[i].setVisible(false);
+                }
+
+
                 ImageIcon icon= new ImageIcon("src/images/map.jpg");
                 Image image = icon.getImage();
                 Image size = image.getScaledInstance(imageLabel.getWidth(),imageLabel.getHeight(),Image.SCALE_SMOOTH);
