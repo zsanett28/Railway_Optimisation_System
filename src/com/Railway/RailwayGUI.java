@@ -118,6 +118,14 @@ public class RailwayGUI extends JFrame {
                 String fromCityName = fromCity.getSelectedItem().toString();
                 String toCityName = toCity.getSelectedItem().toString();
 
+                if ( fromCityName.equals("Cluj-Napoca") || toCityName.equals("Cluj-Napoca"))
+                {
+                    Circle c1 = new Circle(165,208,17,17);
+                    c1.setOpaque(false);
+                    imageLabel.add(c1);
+                }
+
+
                 if (radioPrice.isSelected()) {
                     infoLabel.setText("The cheapest route: ");
 
