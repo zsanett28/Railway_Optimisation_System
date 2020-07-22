@@ -72,6 +72,9 @@ public class RailwayGUI extends JFrame {
         Image kep=g.getScaledInstance(18,18,Image.SCALE_SMOOTH);
         ImageIcon button= new ImageIcon(kep);
         submitButton.setIcon(button);
+        //submitButton.setBorder(new RoundedBorder(10));
+
+
 
 
         this.setContentPane(mainPanel);
@@ -703,7 +706,6 @@ public class RailwayGUI extends JFrame {
             }
         });
     }
-
 
 
 

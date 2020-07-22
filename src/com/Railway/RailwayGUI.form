@@ -246,8 +246,13 @@
                   </grid>
                 </constraints>
                 <properties>
+                  <autoscrolls value="true"/>
                   <background color="-6113333"/>
+                  <borderPainted value="true"/>
+                  <contentAreaFilled value="true"/>
+                  <defaultCapable value="false"/>
                   <font name="Verdana" size="14" style="1"/>
+                  <margin top="4" left="6" bottom="4" right="6"/>
                   <text value="Check"/>
                 </properties>
               </component>
