@@ -22,6 +22,7 @@ public class Line extends JPanel {
         //super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.setColor(Color.red);
+        g2.setStroke(new BasicStroke(2,BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         g2.drawLine(x,y,z,t);
     }
 }
