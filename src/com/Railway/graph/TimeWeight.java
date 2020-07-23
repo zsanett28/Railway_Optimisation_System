@@ -14,7 +14,7 @@ public class TimeWeight implements Weight<Duration> {
 
         Duration waitingTime = Duration.between(prevEdge.getEndTime(), edge.getStartTime());
 
-        if (waitingTime.compareTo(Duration.ZERO) < 0) {
+        if (waitingTime.isNegative()) {
             waitingTime = waitingTime.plusDays(1);
         }
 
