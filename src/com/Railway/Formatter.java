@@ -6,7 +6,6 @@ import com.Railway.graph.TimeWeight;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.List;
 
 public final class Formatter {
@@ -18,7 +17,7 @@ public final class Formatter {
     public static String formatResult(List<Edge> path) {
         double totalPrice = 0;
         Duration totalDuration = Duration.ZERO;
-        List<String> lines = new ArrayList<>();
+        StringBuilder result = new StringBuilder("<html><table>").append("<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>");
 
         Edge prevEdge = null;
         PriceWeight priceWeight = new PriceWeight();
@@ -36,17 +35,17 @@ public final class Formatter {
                 }
 
                 if (waitingTime.compareTo(Duration.of(1, ChronoUnit.MINUTES)) >= 0) {
-                    lines.add("Waiting at " + edge.getFromNode() + "\t" + formatDuration(waitingTime));
+                    result.append("<tr><td colspan=\"5\"><i>").append("Waiting at ").append(edge.getFromNode()).append(": ").append(formatDuration(waitingTime)).append("</i></td></tr>");
                 }
             }
 
-            lines.add(formatEdge(edge));
+            result.append(formatEdge(edge));
             prevEdge = edge;
         }
 
-        lines.add("");
-        lines.add(String.format("Total time: %s\t Total Price: %.2f RON", formatDuration(totalDuration), totalPrice));
-        return "<html>" + String.join("<br/>", lines) + "</html>";
+        result.append("</table><br>");
+        result.append(String.format("<b>Total time:</b> %s<br/><b>Total Price:</b> %.2f RON", formatDuration(totalDuration), totalPrice));
+        return result + "</html>";
     }
 
     private static String formatDuration(Duration duration) {
@@ -56,8 +55,14 @@ public final class Formatter {
     }
 
     private static String formatEdge(Edge edge) {
-        return edge.getFromNode().getCityName() + "-->" + edge.getToNode().getCityName() +
-                "\t" + edge.getStartTime() + "-" + edge.getEndTime() +
-                "\t" + edge.getPrice() + " RON";
+        return "<tr>" +
+                "<td>" + edge.getFromNode().getCityName() + "</td>" +
+                "<td>" + "--->" + "</td>" +
+                "<td>" + edge.getToNode().getCityName() + "</td>" +
+                "<td>" + edge.getStartTime() + "</td>" +
+                "<td>" + "-" + "</td>" +
+                "<td>" + edge.getEndTime() + "</td>" +
+                "<td>" + edge.getPrice() + " RON" + "</td>" +
+                "</tr>";
     }
 }

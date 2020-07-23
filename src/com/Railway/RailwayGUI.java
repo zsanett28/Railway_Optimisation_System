@@ -707,6 +707,4 @@ public class RailwayGUI extends JFrame {
         });
     }
 
-
-
 }
