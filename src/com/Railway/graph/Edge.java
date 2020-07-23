@@ -50,7 +50,11 @@ public class Edge {
     }
 
     public Duration getDuration(){
-        return Duration.between(startTime, endTime);
+        Duration duration = Duration.between(startTime, endTime);
+        if (duration.isNegative()) {
+            duration = duration.plusDays(1);
+        }
+        return duration;
     }
 
     @Override
