@@ -579,7 +579,7 @@ public class RailwayGUI extends JFrame {
                     }
                     if(edge.getFromNode().getCityName().equals("Sibiu") && edge.getToNode().getCityName().equals("Timișoara"))
                     {
-                        Line lin42 = new Line(0,0,0,0);
+                        Line lin42 = new Line(202,316,26,320);
                         lin42.setOpaque(false);
                         imageLabel.add(lin42);
                     }
