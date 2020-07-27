@@ -36,7 +36,6 @@ public class Graph {
                                                     T maxDistance, T minDistance, BinaryOperator<T> accumulator) {
         initializeDijkstra(source, maxDistance, minDistance);
 
-
         Queue<Node> nodeQueue = new PriorityQueue<>(nodeComparator);
         nodeQueue.addAll(nodes);
 
@@ -77,7 +76,7 @@ public class Graph {
     }
 
     private List<Edge> getPath(Node target) {
-        ArrayList<Edge> path = new ArrayList<>();
+        List<Edge> path = new ArrayList<>();
         Edge edge = target.getIncomingEdge();
 
         while (edge != null) {
@@ -94,7 +93,7 @@ public class Graph {
     }
 
     public List<String> getCities() {
-        ArrayList<String> cityNames = new ArrayList<>();
+        List<String> cityNames = new ArrayList<>();
         for (Node node : nodes) {
             cityNames.add(node.getCityName());
         }

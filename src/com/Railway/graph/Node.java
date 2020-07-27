@@ -7,12 +7,13 @@ import java.util.Objects;
 public class Node {
 
     private Object distance;
-    private final ArrayList<Edge> edges = new ArrayList<>();
+    private final ArrayList<Edge> edges;
     private final String cityName;
     private Edge incomingEdge;
 
     public Node(String cityName) {
         this.cityName = cityName;
+        this.edges = new ArrayList<>();
     }
 
     public Object getDistance() {

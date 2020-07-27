@@ -74,9 +74,6 @@ public class RailwayGUI extends JFrame {
         submitButton.setIcon(button);
         //submitButton.setBorder(new RoundedBorder(10));
 
-
-
-
         this.setContentPane(mainPanel);
     }
 
@@ -112,12 +109,10 @@ public class RailwayGUI extends JFrame {
                     return;
                 }
 
-
                 Component[] components = imageLabel.getComponents();
                 for (int i=0; i<components.length; i++) {
                     components[i].setVisible(false);
                 }
-
 
                 ImageIcon icon= new ImageIcon("src/images/map.jpg");
                 Image image = icon.getImage();
@@ -242,7 +237,7 @@ public class RailwayGUI extends JFrame {
 
 
                 for (Edge edge : path) {
-                    if( path.size() != 1) {
+                    if(path.size() != 1) {
                         if(edge.getFromNode().getCityName().equals("Cluj-Napoca"))
                         {
                             Circle circ1 = new Circle(169,213,12,12);
@@ -667,10 +662,7 @@ public class RailwayGUI extends JFrame {
                         imageLabel.add(lin55);
                     }
 
-
                 }
-
-
 
                 String result;
 
@@ -681,11 +673,7 @@ public class RailwayGUI extends JFrame {
                 }
 
                 resultLabel.setText(result);
-
             }
-
-
-
 
         });
 
