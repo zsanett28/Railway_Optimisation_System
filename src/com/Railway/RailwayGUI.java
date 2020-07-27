@@ -2,17 +2,22 @@ package com.Railway;
 
 import com.Railway.graph.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class RailwayGUI extends JFrame {
+
+    /*The elements of the RailwayGUI form*/
     private final Graph graph;
     private JPanel mainPanel;
     private JComboBox<String> toCity;
@@ -36,6 +41,7 @@ public class RailwayGUI extends JFrame {
     private JLabel textLabel;
     private JLabel imageLabel;
     private JPanel bottomPanel;
+    private static BufferedImage BufImage1;
 
     public RailwayGUI(String title, Graph graph) {
         super(title);
@@ -45,6 +51,9 @@ public class RailwayGUI extends JFrame {
         addListeners();
     }
 
+    /**
+     * This method initializes the GUI.
+     */
     private void initializeGUI() {
         //mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
@@ -52,7 +61,15 @@ public class RailwayGUI extends JFrame {
         mapPanel.setSize(550,600);
 
         imageLabel.setSize(550,600);
-        ImageIcon ico= new ImageIcon("src/images/train-cfr.jpg");
+
+        try {
+            BufImage1 = ImageIO.read(getClass().getResourceAsStream("/resources/train-cfr.jpg"));
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+        ImageIcon ico = new ImageIcon(BufImage1);
+
         Image image = ico.getImage();
         Image siz = image.getScaledInstance(imageLabel.getWidth(),imageLabel.getHeight(),Image.SCALE_SMOOTH);
         ImageIcon cfr= new ImageIcon(siz);
@@ -67,7 +84,14 @@ public class RailwayGUI extends JFrame {
         radioGroup.add(radioTime);
         radioGroup.add(radioPrice);
 
-        ImageIcon b= new ImageIcon("src/images/icon.png");
+        try {
+            BufImage1 = ImageIO.read(getClass().getResourceAsStream("/resources/icon.png"));
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+        ImageIcon b = new ImageIcon(BufImage1);
+
         Image g= b.getImage();
         Image kep=g.getScaledInstance(18,18,Image.SCALE_SMOOTH);
         ImageIcon button= new ImageIcon(kep);
@@ -77,6 +101,10 @@ public class RailwayGUI extends JFrame {
         this.setContentPane(mainPanel);
     }
 
+    /**
+     * @return false, if the user did not select the required options in the application's panel
+     *          true, if the user selected all of the required options in the application's panel
+     */
     private boolean validateInput() {
         if (fromCity.getSelectedItem() == null && toCity.getSelectedItem() == null) {
             toCityMessageLabel.setText("Choose arrival and departure point!");
@@ -101,6 +129,11 @@ public class RailwayGUI extends JFrame {
         return true;
     }
 
+    /**
+     * In this method are added the images to the panels, is specified the functionality of the submit button,
+     * are added the circles and lines to the left panel, if the button is pressed.
+     * In this method is called the Dijkstra algorithm.
+     */
     private void addListeners() {
         submitButton.addActionListener(new ActionListener() {
             @Override
@@ -114,10 +147,17 @@ public class RailwayGUI extends JFrame {
                     components[i].setVisible(false);
                 }
 
-                ImageIcon icon= new ImageIcon("src/images/map.jpg");
+                try {
+                    BufImage1 = ImageIO.read(getClass().getResourceAsStream("/resources/map.jpg"));
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+
+                ImageIcon icon = new ImageIcon(BufImage1);
+
                 Image image = icon.getImage();
                 Image size = image.getScaledInstance(imageLabel.getWidth(),imageLabel.getHeight(),Image.SCALE_SMOOTH);
-                ImageIcon map= new ImageIcon(size);
+                ImageIcon map = new ImageIcon(size);
                 imageLabel.setIcon(map);
 
                 String fromCityName = fromCity.getSelectedItem().toString();

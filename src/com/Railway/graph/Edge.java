@@ -39,6 +39,10 @@ public class Edge {
         return price;
     }
 
+    /**
+     * @param node one of the edge's nodes
+     * @return the other node of the edge
+     */
     public Node getNeighbour(Node node) {
         if (fromNode == node) {
             return toNode;
@@ -49,6 +53,9 @@ public class Edge {
         }
     }
 
+    /**
+     * @return duration between two values with LocalTime type
+     */
     public Duration getDuration(){
         Duration duration = Duration.between(startTime, endTime);
         if (duration.isNegative()) {

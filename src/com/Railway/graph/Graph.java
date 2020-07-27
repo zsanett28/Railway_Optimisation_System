@@ -6,11 +6,15 @@ import java.util.function.BinaryOperator;
 
 public class Graph {
 
-    private final List<Node> nodes = new ArrayList<>();
-    private final List<Edge> edges = new ArrayList<>();
-    private final Map<String, Node> stringToNode = new HashMap<>();
+    private final List<Node> nodes;
+    private final List<Edge> edges;
+    private final Map<String, Node> stringToNode;
 
     public Graph(List<String> names) {
+        nodes = new ArrayList<>();
+        edges = new ArrayList<>();
+        stringToNode = new HashMap<>();
+
         for (String name : names) {
             Node node = new Node(name);
             nodes.add(node);
@@ -18,6 +22,13 @@ public class Graph {
         }
     }
 
+    /**
+     * @param fromCity the name of the departure point
+     * @param toCity the name of the arrival point
+     * @param startTime the time, when the train departures
+     * @param endTime the time, when the train arrives
+     * @param price the price of the ticket
+     */
     public void addEdge(String fromCity, String toCity, LocalTime startTime, LocalTime endTime, double price) {
         Node fromNode = stringToNode.get(fromCity);
         Node toNode = stringToNode.get(toCity);
@@ -26,12 +37,20 @@ public class Graph {
         fromNode.addEdge(edge);
     }
 
-    //Dijkstra algorithm
     public <T extends Comparable<T>> void dijkstra(String source, Weight<T> weight, Comparator<Node> nodeComparator,
                                                    T maxDistance, T minDistance, BinaryOperator<T> accumulator) {
         dijkstra(stringToNode.get(source), weight, nodeComparator, maxDistance, minDistance, accumulator);
     }
 
+    /**
+     * @param source the departure point, the source node
+     * @param weight the distance between the nodes given in time or in price
+     * @param nodeComparator the comparison of the nodes is based on this
+     * @param maxDistance the max value of Double or Duration type
+     * @param minDistance the min value of Double or Duration type
+     * @param accumulator the binary operator
+     * @param <T> the type of the distance between the nodes and the source (Duration or Double)
+     */
     private <T extends Comparable<T>> void dijkstra(Node source, Weight<T> weight, Comparator<Node> nodeComparator,
                                                     T maxDistance, T minDistance, BinaryOperator<T> accumulator) {
         initializeDijkstra(source, maxDistance, minDistance);
@@ -51,6 +70,15 @@ public class Graph {
         }
     }
 
+    /**
+     * @param current the current node
+     * @param neighbour the neighbour node, the other node of the edge
+     * @param edge the edge of the selected node from the queue
+     * @param weight the distance between the nodes given in time or in price
+     * @param accumulator the binary operator
+     * @param queue priority queue for obtaining an unvisited node with the minimum distance from the source
+     * @param <T> the type of the distance between the nodes and the source (Duration or Double)
+     */
     private <T extends Comparable<T>> void relax(Node current, Node neighbour, Edge edge, T weight,
                                                  BinaryOperator<T> accumulator, Queue<Node> queue) {
         T weightSum = accumulator.apply((T) current.getDistance(), weight);
@@ -63,6 +91,12 @@ public class Graph {
         }
     }
 
+    /**
+     * @param source the departure point, the source node
+     * @param maxDistance the max value of Double or Duration type
+     * @param minDistance the min value of Double or Duration type
+     * @param <T> the type of the distance between the nodes and the source (Duration or Double)
+     */
     private <T extends Comparable<T>> void initializeDijkstra(Node source, T maxDistance, T minDistance) {
         for (Node node : nodes) {
             node.setDistance(maxDistance);
@@ -75,6 +109,10 @@ public class Graph {
         return getPath(stringToNode.get(target));
     }
 
+    /**
+     * @param target the arrival point
+     * @return reverted path list, which contains the nodes from departure point to arrival point based on Dijkstra algorithm
+     */
     private List<Edge> getPath(Node target) {
         List<Edge> path = new ArrayList<>();
         Edge edge = target.getIncomingEdge();
@@ -88,10 +126,9 @@ public class Graph {
         return path;
     }
 
-    public Object getDistanceFromSource(String name) {
-        return stringToNode.get(name).getDistance();
-    }
-
+    /**
+     * @return cityNames list, which contains the names of the cities
+     */
     public List<String> getCities() {
         List<String> cityNames = new ArrayList<>();
         for (Node node : nodes) {

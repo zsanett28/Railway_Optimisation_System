@@ -14,6 +14,10 @@ public final class Formatter {
 
     }
 
+    /**
+     * @param path list, which contains the nodes from departure point to arrival point based on Dijkstra algorithm
+     * @return a variable with StringBuilder type, which is formatted in a html table
+     */
     public static String formatResult(List<Edge> path) {
         double totalPrice = 0;
         Duration totalDuration = Duration.ZERO;
@@ -48,12 +52,21 @@ public final class Formatter {
         return result + "</html>";
     }
 
+    /**
+     * @param duration travelling time between two or more cities
+     * @return the duration between the cities in hour:minutes format
+     */
     private static String formatDuration(Duration duration) {
         return String.format("%dh %02dm",
                 duration.toHours(),
                 duration.toMinutesPart());
     }
 
+    /**
+     * @param edge the road from one city to another
+     * @return a row of the table, including the departure point, arrival point,
+     * departure time, arrival time and ticket price
+     */
     private static String formatEdge(Edge edge) {
         return "<tr>" +
                 "<td>" + edge.getFromNode().getCityName() + "</td>" +
