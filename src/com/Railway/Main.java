@@ -14,11 +14,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<String> names = readCitiesFromFile("cities.txt");
+        List<String> names = readCitiesFromFile("/resources/cities.txt");
 
         Graph graph = new Graph(names);
 
-        readRoutesFromFile("routes.txt", graph);
+        readRoutesFromFile("/resources/routes.txt", graph);
 
         startGUI(graph);
     }
@@ -43,17 +43,12 @@ public class Main {
         String cityname;
         Scanner sc;
 
-        try {
-            sc = new Scanner(new FileReader(path));
-            while (sc.hasNext()) {
-                cityname = sc.nextLine();
-                names.add(cityname);
-            }
-            sc.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Can't find file!");
-            System.exit(1);
+        sc = new Scanner(Main.class.getResourceAsStream(path));
+        while (sc.hasNext()) {
+            cityname = sc.nextLine();
+            names.add(cityname);
         }
+        sc.close();
         return names;
     }
 
@@ -64,22 +59,17 @@ public class Main {
     /*reading the roads between the cities from routes.txt file and adding them to the graph*/
     private static void readRoutesFromFile(String path, Graph graph) {
         Scanner sc;
-        try {
-            sc = new Scanner(new FileReader(path));
-            sc.useDelimiter(";");
-            while (sc.hasNext()) {
-                String fromCity = sc.next();
-                String toCity = sc.next();
-                LocalTime startTime = LocalTime.parse(sc.next());
-                LocalTime endTime = LocalTime.parse(sc.next());
-                double price = sc.nextDouble();
-                sc.nextLine();
-                graph.addEdge(fromCity, toCity, startTime, endTime, price);
-            }
-            sc.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Can't find file!");
-            System.exit(1);
+        sc = new Scanner(Main.class.getResourceAsStream(path));
+        sc.useDelimiter(";");
+        while (sc.hasNext()) {
+            String fromCity = sc.next();
+            String toCity = sc.next();
+            LocalTime startTime = LocalTime.parse(sc.next());
+            LocalTime endTime = LocalTime.parse(sc.next());
+            double price = sc.nextDouble();
+            sc.nextLine();
+            graph.addEdge(fromCity, toCity, startTime, endTime, price);
         }
+        sc.close();
     }
 }

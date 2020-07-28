@@ -92,6 +92,9 @@ public class Graph {
     }
 
     /**
+     *
+     * Initializes the nodes for the dijkstra algorithm.
+     *
      * @param source the departure point, the source node
      * @param maxDistance the max value of Double or Duration type
      * @param minDistance the min value of Double or Duration type
